@@ -1,0 +1,1408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HealthInsuranceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="Split_Result">
+    <Property Name="Id" Type="Int64" />
+    <Property Name="items" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <ComplexType Name="SplitString_Result">
+    <Property Name="DATA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </ComplexType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_ADDON">
+    <Key>
+      <PropertyRef Name="ADDON_ID" />
+    </Key>
+    <Property Name="ADDON_ID" Type="Int32" Nullable="false" />
+    <Property Name="AddonName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="OutputKeyword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_ADDON_PROD_MAP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ADDON_ID" Type="Int32" />
+    <Property Name="PROD_ID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TBL_HI_CAT_MST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CAT_ID" Type="Int32" Nullable="false" />
+    <Property Name="Cat_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="CAT_TYPE_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_CLAIM_SETTLEMENT">
+    <Key>
+      <PropertyRef Name="CLAIM_ID" />
+    </Key>
+    <Property Name="CLAIM_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Period_Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Start_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="End_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Ind_Group" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Opening_Claims" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="New_Added" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Claims_Settled" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Claims_Repudiated" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Claims_Closed" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Closing_Claims" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Setl_1_mon" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Setl_1_3_mon" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Setl_3_6_mon" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Setl_6_12_mon" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Setl_Over_1_Yr" Type="Decimal" Precision="8" Scale="0" />
+    <Property Name="Settlement_Percent" Type="Decimal" Precision="8" Scale="4" />
+    <Property Name="Repudiation_Percent" Type="Decimal" Precision="8" Scale="4" />
+    <Property Name="Settl_1_month_Percent" Type="Decimal" Precision="8" Scale="4" />
+    <Property Name="Settl_1_3_month_Percent" Type="Decimal" Precision="8" Scale="4" />
+    <Property Name="Settl_abv_3_month_Percent" Type="Decimal" Precision="8" Scale="4" />
+  </EntityType>
+  <EntityType Name="TBL_HI_COMP_FILE_PATH_MST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROD_ID" Type="Int32" />
+    <Property Name="FILE_DISPLAY_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_LOCATION" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_NAME_WO_EXT" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_EXT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FILE_TYPE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ADDED_DT" Type="DateTime" Precision="0" />
+    <Property Name="FILE_STATUS" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="UIN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_COMPANY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_DEDUCTIBLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DED_ID" Type="Int32" Nullable="false" />
+    <Property Name="MIN_DED" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="MAX_DED" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_EMAIL">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" />
+    <Property Name="RegId" Type="Int32" />
+    <Property Name="EmailAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailKey" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ReferencePage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Data" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBL_HI_FEATURES">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FeaturesId" Type="Int32" Nullable="false" />
+    <Property Name="BenID" Type="Int32" Nullable="false" />
+    <Property Name="FeaturesName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ComparisonFlag" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Icon_Path" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PersonalizePage_Class" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PersonalizePage_Order" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TBL_HI_MEMBERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Member_ID" Type="Int32" Nullable="false" />
+    <Property Name="Member_Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_MODAL_POINTS">
+    <Key>
+      <PropertyRef Name="Modal_ID" />
+    </Key>
+    <Property Name="Modal_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROD_ID" Type="Int32" />
+    <Property Name="Family_ID" Type="Int32" />
+    <Property Name="SelfGender" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="SelfAge" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="SpouseAge" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="FatherAge" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="MotherAge" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ChildAge1" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ChildAge2" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ChildAge3" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ChildAge4" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ChildAge5" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="ChildGender1" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ChildGender2" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ChildGender3" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ChildGender4" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ChildGender5" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="SA_ID" Type="Int32" />
+    <Property Name="DED_ID" Type="Int32" />
+    <Property Name="Geography" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_NETWORKHOSP">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROD_ID" Type="Int32" />
+    <Property Name="HospName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="HospAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LatLong" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PINCODE">
+    <Key>
+      <PropertyRef Name="PinCodeId" />
+    </Key>
+    <Property Name="PinCodeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityId" Type="Int32" />
+    <Property Name="PinCode" Type="Int32" />
+    <Property Name="PinCodeArea" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PROD_DEDUCTIBLE">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROD_ID" Type="Int32" />
+    <Property Name="FROM_AGE" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="To_AGE" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="FROM_SA" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="TO_SA" Type="Decimal" Precision="9" Scale="0" />
+    <Property Name="Deductible" Type="Decimal" Precision="9" Scale="0" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PROD_DESC">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROD_ID" Type="Int32" />
+    <Property Name="ProdDescription1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ProdDescription2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PRODUCT_CI">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PROD_ID" Type="Int32" />
+    <Property Name="FeaturesId" Type="Int32" />
+    <Property Name="SubFeatureID" Type="Int32" />
+    <Property Name="CIName" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="CIDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_REGISTRATION_COMPANY">
+    <Key>
+      <PropertyRef Name="RegId" />
+      <PropertyRef Name="Comp_Id" />
+    </Key>
+    <Property Name="RegId" Type="Int32" Nullable="false" />
+    <Property Name="Comp_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_ROOM_CATEGORY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROOM_CATEGORY" Type="Int32" Nullable="false" />
+    <Property Name="ROOM_CAT_NAME" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_STATE_CITY">
+    <Key>
+      <PropertyRef Name="StateCityID" />
+    </Key>
+    <Property Name="StateCityID" Type="Int32" Nullable="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="State" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Order_Display" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TBL_HI_USAGE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="UseDate" Type="DateTime" Precision="3" />
+    <Property Name="CustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FromPage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Gender" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Age" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="ProductName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="SA" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="FamilyCombo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Deductible" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_ADDON_PREM_RATES">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="ADDON_ID" />
+      <PropertyRef Name="AGE_LOWER_LIMIT" />
+      <PropertyRef Name="AGE_UPPER_LIMIT" />
+      <PropertyRef Name="Geography" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="GENDER" />
+      <PropertyRef Name="FAMILY_ID" />
+      <PropertyRef Name="SA_LOWER_LIMIT" />
+      <PropertyRef Name="SA_UPPER_LIMIT" />
+      <PropertyRef Name="RATE" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="ADDON_ID" Type="Int32" Nullable="false" />
+    <Property Name="AGE_LOWER_LIMIT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="AGE_UPPER_LIMIT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="Geography" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="GENDER" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FAMILY_ID" Type="Int32" Nullable="false" />
+    <Property Name="Members_Cat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PT" Type="Int32" />
+    <Property Name="SA_LOWER_LIMIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="SA_UPPER_LIMIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Field1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RATE" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_ADDON_PRODUCT_FORMULA">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="ADDON_ID" />
+      <PropertyRef Name="FORMULA_NAME" />
+      <PropertyRef Name="FORMULA" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="ADDON_ID" Type="Int32" Nullable="false" />
+    <Property Name="FORMULA_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FORMULA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_AGE_MST">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="Member_ID" />
+      <PropertyRef Name="MIN_ENTRY_AGE" />
+      <PropertyRef Name="MAX_ENTRY_AGE" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="Member_ID" Type="Int32" Nullable="false" />
+    <Property Name="MIN_ENTRY_AGE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MAX_ENTRY_AGE" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_BENTYPE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="BenID" />
+      <PropertyRef Name="BenTitle" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BenID" Type="Int32" Nullable="false" />
+    <Property Name="BenTitle" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_COPAY">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="SA_LOWER_IMIT" />
+      <PropertyRef Name="SA_UPPER_LIMIT" />
+      <PropertyRef Name="AGE_LOWER" />
+      <PropertyRef Name="AGE_UPPER" />
+      <PropertyRef Name="ROOM_CATEGORY" />
+      <PropertyRef Name="COPAY" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="SA_LOWER_IMIT" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+    <Property Name="SA_UPPER_LIMIT" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+    <Property Name="AGE_LOWER" Type="Int32" Nullable="false" />
+    <Property Name="AGE_UPPER" Type="Int32" Nullable="false" />
+    <Property Name="ROOM_CATEGORY" Type="Int32" Nullable="false" />
+    <Property Name="COPAY" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_FAMILY">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Family_ID" />
+      <PropertyRef Name="Members_Cat" />
+      <PropertyRef Name="No_Members" />
+      <PropertyRef Name="Family_Detail" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Family_ID" Type="Int32" Nullable="false" />
+    <Property Name="Members_Cat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="No_Members" Type="Int32" Nullable="false" />
+    <Property Name="Family_Detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_FAMILY_BKP">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Family_ID" />
+      <PropertyRef Name="Members_Cat" />
+      <PropertyRef Name="No_Members" />
+      <PropertyRef Name="Family_Detail" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Family_ID" Type="Int32" Nullable="false" />
+    <Property Name="Members_Cat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="No_Members" Type="Int32" Nullable="false" />
+    <Property Name="Family_Detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_FAMILY_COMBO">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Self" />
+      <PropertyRef Name="Spouse" />
+      <PropertyRef Name="Father" />
+      <PropertyRef Name="Mother" />
+      <PropertyRef Name="Children" />
+      <PropertyRef Name="Family_ID" />
+      <PropertyRef Name="Members_Cat" />
+      <PropertyRef Name="No_Members" />
+      <PropertyRef Name="Family_Detail" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Self" Type="Int32" Nullable="false" />
+    <Property Name="Spouse" Type="Int32" Nullable="false" />
+    <Property Name="Father" Type="Int32" Nullable="false" />
+    <Property Name="Mother" Type="Int32" Nullable="false" />
+    <Property Name="Children" Type="Int32" Nullable="false" />
+    <Property Name="Family_ID" Type="Int32" Nullable="false" />
+    <Property Name="Members_Cat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="No_Adults" Type="Int32" />
+    <Property Name="No_Members" Type="Int32" Nullable="false" />
+    <Property Name="Family_Detail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_MEMBER_DISC">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="PT" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="MIN_MEMBERS" />
+      <PropertyRef Name="MAX_MEMBERS" />
+      <PropertyRef Name="SA_LOWER_LIMIT" />
+      <PropertyRef Name="SA_UPPER_LIMIT" />
+      <PropertyRef Name="DISC_RATE" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="PT" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="MIN_MEMBERS" Type="Int32" Nullable="false" />
+    <Property Name="MAX_MEMBERS" Type="Int32" Nullable="false" />
+    <Property Name="SA_LOWER_LIMIT" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+    <Property Name="SA_UPPER_LIMIT" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+    <Property Name="DISC_RATE" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_MIN_SA">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="FROM_AGE" />
+      <PropertyRef Name="TO_AGE" />
+      <PropertyRef Name="SA" />
+      <PropertyRef Name="MAX_SA" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="FROM_AGE" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="TO_AGE" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="SA" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="MAX_SA" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_NCB">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="BONUS_RATE" />
+      <PropertyRef Name="MAX_CUM_BONUS" />
+      <PropertyRef Name="No_Years" />
+      <PropertyRef Name="RENEWAL_DISCOUNT" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="BONUS_RATE" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+    <Property Name="MAX_CUM_BONUS" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+    <Property Name="No_Years" Type="Int32" Nullable="false" />
+    <Property Name="RENEWAL_DISCOUNT" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PREM_RATES">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="AGE_LOWER_LIMIT" />
+      <PropertyRef Name="AGE_UPPER_LIMIT" />
+      <PropertyRef Name="Geography" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="GENDER" />
+      <PropertyRef Name="FAMILY_ID" />
+      <PropertyRef Name="SA_LOWER_LIMIT" />
+      <PropertyRef Name="SA_UPPER_LIMIT" />
+      <PropertyRef Name="RATE" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="AGE_LOWER_LIMIT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="AGE_UPPER_LIMIT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="Geography" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="GENDER" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FAMILY_ID" Type="Int32" Nullable="false" />
+    <Property Name="Members_Cat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PT" Type="Int32" />
+    <Property Name="SA_LOWER_LIMIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="SA_UPPER_LIMIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Field1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RATE" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PROD_CAT">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="CAT_TYPE_ID" />
+      <PropertyRef Name="OPTIONS_ID" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="CAT_TYPE_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PROD_FAMILY">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="FAMILY_ID" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="FAMILY_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PROD_MEMBERS">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="Member_ID" />
+      <PropertyRef Name="MIN_MEMBERS" />
+      <PropertyRef Name="MAX_MEMBERS" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="Member_ID" Type="Int32" Nullable="false" />
+    <Property Name="MIN_MEMBERS" Type="Int32" Nullable="false" />
+    <Property Name="MAX_MEMBERS" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PROD_OPTION">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="OPTIONS_NAME" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PRODUCT">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="COMP_ID" />
+      <PropertyRef Name="PROD_NAME" />
+      <PropertyRef Name="STATUS" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="COMP_ID" Type="Int32" Nullable="false" />
+    <Property Name="PROD_NAME" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="STATUS" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PRODUCT_FEATURES">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="SubFeatureID" />
+      <PropertyRef Name="Feature_Present" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="Min_SA" />
+      <PropertyRef Name="Max_SA" />
+      <PropertyRef Name="NumInfo" />
+      <PropertyRef Name="MaxNumInfo" />
+      <PropertyRef Name="Unit" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="SubFeatureID" Type="Int32" Nullable="false" />
+    <Property Name="Feature_Present" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="Min_SA" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Max_SA" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="NumInfo" Type="Double" Nullable="false" />
+    <Property Name="MaxNumInfo" Type="Double" Nullable="false" />
+    <Property Name="Unit" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Optional" Type="Int32" />
+    <Property Name="SpecialFeature" Type="Int32" />
+    <Property Name="ShortDesc" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+    <Property Name="LongDesc" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PRODUCT_FORMULA">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="FORMULA_NAME" />
+      <PropertyRef Name="FORMULA" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="FORMULA_NAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FORMULA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_PT_MASTER">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="PT" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="PT" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_RATETABLE1">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="AGE_LOWER_LIMIT" />
+      <PropertyRef Name="AGE_UPPER_LIMIT" />
+      <PropertyRef Name="Geography" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="GENDER" />
+      <PropertyRef Name="FAMILY_ID" />
+      <PropertyRef Name="SA_LOWER_LIMIT" />
+      <PropertyRef Name="SA_UPPER_LIMIT" />
+      <PropertyRef Name="RATE" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="AGE_LOWER_LIMIT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="AGE_UPPER_LIMIT" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+    <Property Name="Geography" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="GENDER" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FAMILY_ID" Type="Int32" Nullable="false" />
+    <Property Name="Members_Cat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PT" Type="Int32" />
+    <Property Name="SA_LOWER_LIMIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="SA_UPPER_LIMIT" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Field1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RATE" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_ROOM_RENT">
+    <Key>
+      <PropertyRef Name="PROD_ID" />
+      <PropertyRef Name="OPTIONS_ID" />
+      <PropertyRef Name="SA_LOWER_LIMIT" />
+      <PropertyRef Name="SA_UPPER_LIMIT" />
+      <PropertyRef Name="RENT" />
+      <PropertyRef Name="MAX_RENT_ABS" />
+      <PropertyRef Name="RENT_SA_PERCENT" />
+      <PropertyRef Name="MAX_RENT_SA_PERCENT" />
+      <PropertyRef Name="ROOM_CATEGORY" />
+    </Key>
+    <Property Name="PROD_ID" Type="Int32" Nullable="false" />
+    <Property Name="OPTIONS_ID" Type="Int32" Nullable="false" />
+    <Property Name="SA_LOWER_LIMIT" Type="Int32" Nullable="false" />
+    <Property Name="SA_UPPER_LIMIT" Type="Int32" Nullable="false" />
+    <Property Name="RENT" Type="Decimal" Precision="18" Scale="5" Nullable="false" />
+    <Property Name="MAX_RENT_ABS" Type="Decimal" Precision="18" Scale="5" Nullable="false" />
+    <Property Name="RENT_SA_PERCENT" Type="Decimal" Precision="18" Scale="5" Nullable="false" />
+    <Property Name="MAX_RENT_SA_PERCENT" Type="Decimal" Precision="18" Scale="5" Nullable="false" />
+    <Property Name="ROOM_CATEGORY" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_SA_RANGE">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="SA_ID" />
+      <PropertyRef Name="MIN_SA" />
+      <PropertyRef Name="MAX_SA" />
+      <PropertyRef Name="Description" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SA_ID" Type="Int32" Nullable="false" />
+    <Property Name="MIN_SA" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="MAX_SA" Type="Decimal" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TBL_HI_STATE">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="AddedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TBL_HI_SUBFEATURES">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="FeaturesId" />
+      <PropertyRef Name="SubFeatureID" />
+      <PropertyRef Name="SubFeatureName" />
+      <PropertyRef Name="ComparisonFlag" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FeaturesId" Type="Int32" Nullable="false" />
+    <Property Name="SubFeatureID" Type="Int32" Nullable="false" />
+    <Property Name="SubFeatureName" Type="String" MaxLength="2000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ComparisonFlag" Type="Int32" Nullable="false" />
+    <Property Name="Scorecard" Type="Int32" />
+    <Property Name="Rank1" Type="Int32" />
+    <Property Name="BaseValue" Type="Double" />
+    <Property Name="ProductSummary_Title" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ProductSummary_Class" Type="Int32" />
+    <Property Name="ProductSummary_Order" Type="Int32" />
+    <Property Name="DetailPage_Class" Type="Int32" />
+    <Property Name="DetailPage_Order" Type="Int32" />
+    <Property Name="ProdSummIcon" Type="Int32" />
+    <Property Name="ProdSummIcon_Order" Type="Int32" />
+    <Property Name="DisplayPage_Filter" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TBL_HI_Weights">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Rank" />
+      <PropertyRef Name="Weights" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Rank" Type="Int32" Nullable="false" />
+    <Property Name="Weights" Type="Decimal" Precision="9" Scale="5" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="HealthInsuranceEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="TBL_HI_ADDON" EntityType="Self.TBL_HI_ADDON" />
+    <EntitySet Name="TBL_HI_ADDON_PROD_MAP" EntityType="Self.TBL_HI_ADDON_PROD_MAP" />
+    <EntitySet Name="TBL_HI_CAT_MST" EntityType="Self.TBL_HI_CAT_MST" />
+    <EntitySet Name="TBL_HI_CLAIM_SETTLEMENT" EntityType="Self.TBL_HI_CLAIM_SETTLEMENT" />
+    <EntitySet Name="TBL_HI_COMP_FILE_PATH_MST" EntityType="Self.TBL_HI_COMP_FILE_PATH_MST" />
+    <EntitySet Name="TBL_HI_COMPANY" EntityType="Self.TBL_HI_COMPANY" />
+    <EntitySet Name="TBL_HI_DEDUCTIBLE" EntityType="Self.TBL_HI_DEDUCTIBLE" />
+    <EntitySet Name="TBL_HI_EMAIL" EntityType="Self.TBL_HI_EMAIL" />
+    <EntitySet Name="TBL_HI_FEATURES" EntityType="Self.TBL_HI_FEATURES" />
+    <EntitySet Name="TBL_HI_MEMBERS" EntityType="Self.TBL_HI_MEMBERS" />
+    <EntitySet Name="TBL_HI_MODAL_POINTS" EntityType="Self.TBL_HI_MODAL_POINTS" />
+    <EntitySet Name="TBL_HI_NETWORKHOSP" EntityType="Self.TBL_HI_NETWORKHOSP" />
+    <EntitySet Name="TBL_HI_PINCODE" EntityType="Self.TBL_HI_PINCODE" />
+    <EntitySet Name="TBL_HI_PROD_DEDUCTIBLE" EntityType="Self.TBL_HI_PROD_DEDUCTIBLE" />
+    <EntitySet Name="TBL_HI_PROD_DESC" EntityType="Self.TBL_HI_PROD_DESC" />
+    <EntitySet Name="TBL_HI_PRODUCT_CI" EntityType="Self.TBL_HI_PRODUCT_CI" />
+    <EntitySet Name="TBL_HI_REGISTRATION_COMPANY" EntityType="Self.TBL_HI_REGISTRATION_COMPANY" />
+    <EntitySet Name="TBL_HI_ROOM_CATEGORY" EntityType="Self.TBL_HI_ROOM_CATEGORY" />
+    <EntitySet Name="TBL_HI_STATE_CITY" EntityType="Self.TBL_HI_STATE_CITY" />
+    <EntitySet Name="TBL_HI_USAGE" EntityType="Self.TBL_HI_USAGE" />
+    <EntitySet Name="TBL_HI_ADDON_PREM_RATES" EntityType="Self.TBL_HI_ADDON_PREM_RATES" />
+    <EntitySet Name="TBL_HI_ADDON_PRODUCT_FORMULA" EntityType="Self.TBL_HI_ADDON_PRODUCT_FORMULA" />
+    <EntitySet Name="TBL_HI_AGE_MST" EntityType="Self.TBL_HI_AGE_MST" />
+    <EntitySet Name="TBL_HI_BENTYPE" EntityType="Self.TBL_HI_BENTYPE" />
+    <EntitySet Name="TBL_HI_COPAY" EntityType="Self.TBL_HI_COPAY" />
+    <EntitySet Name="TBL_HI_FAMILY" EntityType="Self.TBL_HI_FAMILY" />
+    <EntitySet Name="TBL_HI_FAMILY_BKP" EntityType="Self.TBL_HI_FAMILY_BKP" />
+    <EntitySet Name="TBL_HI_FAMILY_COMBO" EntityType="Self.TBL_HI_FAMILY_COMBO" />
+    <EntitySet Name="TBL_HI_MEMBER_DISC" EntityType="Self.TBL_HI_MEMBER_DISC" />
+    <EntitySet Name="TBL_HI_MIN_SA" EntityType="Self.TBL_HI_MIN_SA" />
+    <EntitySet Name="TBL_HI_NCB" EntityType="Self.TBL_HI_NCB" />
+    <EntitySet Name="TBL_HI_PREM_RATES" EntityType="Self.TBL_HI_PREM_RATES" />
+    <EntitySet Name="TBL_HI_PROD_CAT" EntityType="Self.TBL_HI_PROD_CAT" />
+    <EntitySet Name="TBL_HI_PROD_FAMILY" EntityType="Self.TBL_HI_PROD_FAMILY" />
+    <EntitySet Name="TBL_HI_PROD_MEMBERS" EntityType="Self.TBL_HI_PROD_MEMBERS" />
+    <EntitySet Name="TBL_HI_PROD_OPTION" EntityType="Self.TBL_HI_PROD_OPTION" />
+    <EntitySet Name="TBL_HI_PRODUCT" EntityType="Self.TBL_HI_PRODUCT" />
+    <EntitySet Name="TBL_HI_PRODUCT_FEATURES" EntityType="Self.TBL_HI_PRODUCT_FEATURES" />
+    <EntitySet Name="TBL_HI_PRODUCT_FORMULA" EntityType="Self.TBL_HI_PRODUCT_FORMULA" />
+    <EntitySet Name="TBL_HI_PT_MASTER" EntityType="Self.TBL_HI_PT_MASTER" />
+    <EntitySet Name="TBL_HI_RATETABLE1" EntityType="Self.TBL_HI_RATETABLE1" />
+    <EntitySet Name="TBL_HI_ROOM_RENT" EntityType="Self.TBL_HI_ROOM_RENT" />
+    <EntitySet Name="TBL_HI_SA_RANGE" EntityType="Self.TBL_HI_SA_RANGE" />
+    <EntitySet Name="TBL_HI_STATE" EntityType="Self.TBL_HI_STATE" />
+    <EntitySet Name="TBL_HI_SUBFEATURES" EntityType="Self.TBL_HI_SUBFEATURES" />
+    <EntitySet Name="TBL_HI_Weights" EntityType="Self.TBL_HI_Weights" />
+    <FunctionImport Name="Split" IsComposable="true" ReturnType="Collection(HealthInsuranceModel.Split_Result)">
+      <Parameter Name="String" Mode="In" Type="String" />
+      <Parameter Name="Delimiter" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SplitString" IsComposable="true" ReturnType="Collection(HealthInsuranceModel.SplitString_Result)">
+      <Parameter Name="String" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GetHI_FAMILY_COMBO" ReturnType="Collection(HealthInsuranceModel.GetHI_FAMILY_COMBO_Result)">
+      <Parameter Name="familyID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetHI_MODAL_POINTS" ReturnType="Collection(HealthInsuranceModel.GetHI_MODAL_POINTS_Result)">
+      <Parameter Name="ProdID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GetMasters" ReturnType="Collection(HealthInsuranceModel.GetMasters_Result)" />
+    <FunctionImport Name="HI_CalculatePremium" ReturnType="Collection(Double)">
+      <Parameter Name="PRODID_Input" Mode="In" Type="Int32" />
+      <Parameter Name="SA_ID" Mode="In" Type="Double" />
+      <Parameter Name="Highest_age" Mode="In" Type="Double" />
+      <Parameter Name="familyid" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="selfage" Mode="In" Type="Double" />
+      <Parameter Name="spouseage" Mode="In" Type="Double" />
+      <Parameter Name="motherage" Mode="In" Type="Double" />
+      <Parameter Name="fatherage" Mode="In" Type="Double" />
+      <Parameter Name="childage1" Mode="In" Type="Double" />
+      <Parameter Name="childage2" Mode="In" Type="Double" />
+      <Parameter Name="childage3" Mode="In" Type="Double" />
+      <Parameter Name="childage4" Mode="In" Type="Double" />
+      <Parameter Name="childage5" Mode="In" Type="Double" />
+      <Parameter Name="childgender1" Mode="In" Type="String" />
+      <Parameter Name="childgender2" Mode="In" Type="String" />
+      <Parameter Name="childgender3" Mode="In" Type="String" />
+      <Parameter Name="childgender4" Mode="In" Type="String" />
+      <Parameter Name="childgender5" Mode="In" Type="String" />
+      <Parameter Name="geography" Mode="In" Type="Int32" />
+      <Parameter Name="policyterm" Mode="In" Type="Int32" />
+      <Parameter Name="DED_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_CalculatePremium_POS" ReturnType="Collection(Double)">
+      <Parameter Name="PRODID_Input" Mode="In" Type="Int32" />
+      <Parameter Name="SA_ID" Mode="In" Type="Double" />
+      <Parameter Name="Highest_age" Mode="In" Type="Double" />
+      <Parameter Name="familyid" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="selfage" Mode="In" Type="Double" />
+      <Parameter Name="spouseage" Mode="In" Type="Double" />
+      <Parameter Name="motherage" Mode="In" Type="Double" />
+      <Parameter Name="fatherage" Mode="In" Type="Double" />
+      <Parameter Name="childage1" Mode="In" Type="Double" />
+      <Parameter Name="childage2" Mode="In" Type="Double" />
+      <Parameter Name="childage3" Mode="In" Type="Double" />
+      <Parameter Name="childage4" Mode="In" Type="Double" />
+      <Parameter Name="childage5" Mode="In" Type="Double" />
+      <Parameter Name="childgender1" Mode="In" Type="String" />
+      <Parameter Name="childgender2" Mode="In" Type="String" />
+      <Parameter Name="childgender3" Mode="In" Type="String" />
+      <Parameter Name="childgender4" Mode="In" Type="String" />
+      <Parameter Name="childgender5" Mode="In" Type="String" />
+      <Parameter Name="geography" Mode="In" Type="Int32" />
+      <Parameter Name="policyterm" Mode="In" Type="Int32" />
+      <Parameter Name="DED_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_DELETEPROD">
+      <Parameter Name="PROD_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_COMPANY_MASTERS" ReturnType="Collection(Int32)">
+      <Parameter Name="RegID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_COMPARABLE_PRODUCT" ReturnType="Collection(HealthInsuranceModel.HI_GET_COMPARABLE_PRODUCT_Result)">
+      <Parameter Name="inputprod_id" Mode="In" Type="Int32" />
+      <Parameter Name="self_flag" Mode="In" Type="Int32" />
+      <Parameter Name="spouse_flag" Mode="In" Type="Int32" />
+      <Parameter Name="father_flag" Mode="In" Type="Int32" />
+      <Parameter Name="mother_flag" Mode="In" Type="Int32" />
+      <Parameter Name="no_children" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="selfage" Mode="In" Type="Double" />
+      <Parameter Name="spouseage" Mode="In" Type="Double" />
+      <Parameter Name="motherage" Mode="In" Type="Double" />
+      <Parameter Name="fatherage" Mode="In" Type="Double" />
+      <Parameter Name="childage1" Mode="In" Type="Double" />
+      <Parameter Name="childage2" Mode="In" Type="Double" />
+      <Parameter Name="childage3" Mode="In" Type="Double" />
+      <Parameter Name="childage4" Mode="In" Type="Double" />
+      <Parameter Name="childage5" Mode="In" Type="Double" />
+      <Parameter Name="childgender1" Mode="In" Type="String" />
+      <Parameter Name="childgender2" Mode="In" Type="String" />
+      <Parameter Name="childgender3" Mode="In" Type="String" />
+      <Parameter Name="childgender4" Mode="In" Type="String" />
+      <Parameter Name="childgender5" Mode="In" Type="String" />
+      <Parameter Name="highest_age" Mode="In" Type="Double" />
+      <Parameter Name="SA_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Geography" Mode="In" Type="Int32" />
+      <Parameter Name="policyterm" Mode="In" Type="Int32" />
+      <Parameter Name="DED_ID" Mode="In" Type="Int32" />
+      <Parameter Name="regid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_FILE_NAME_PATH" ReturnType="Collection(HealthInsuranceModel.HI_GET_FILE_NAME_PATH_Result)">
+      <Parameter Name="PROD_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_MASTERS" ReturnType="Collection(HealthInsuranceModel.HI_GET_MASTERS_Result)">
+      <Parameter Name="PRODUCTID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_PROD_MASTERS" ReturnType="Collection(HealthInsuranceModel.HI_GET_PROD_MASTERS_Result)">
+      <Parameter Name="PRODUCTID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_PROD_NETWORKHOSP" ReturnType="Collection(HealthInsuranceModel.HI_GET_PROD_NETWORKHOSP_Result)">
+      <Parameter Name="ProdID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_PRODUCT" ReturnType="Collection(HealthInsuranceModel.HI_GET_PRODUCT_Result)">
+      <Parameter Name="PRODID_Input" Mode="In" Type="Int32" />
+      <Parameter Name="self_flag" Mode="In" Type="Int32" />
+      <Parameter Name="spouse_flag" Mode="In" Type="Int32" />
+      <Parameter Name="father_flag" Mode="In" Type="Int32" />
+      <Parameter Name="mother_flag" Mode="In" Type="Int32" />
+      <Parameter Name="no_children" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="highest_age" Mode="In" Type="Double" />
+      <Parameter Name="SA_ID" Mode="In" Type="Int32" />
+      <Parameter Name="DED_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Geography" Mode="In" Type="Int32" />
+      <Parameter Name="policyterm" Mode="In" Type="Int32" />
+      <Parameter Name="selfage" Mode="In" Type="Double" />
+      <Parameter Name="spouseage" Mode="In" Type="Double" />
+      <Parameter Name="motherage" Mode="In" Type="Double" />
+      <Parameter Name="fatherage" Mode="In" Type="Double" />
+      <Parameter Name="childage1" Mode="In" Type="Double" />
+      <Parameter Name="childage2" Mode="In" Type="Double" />
+      <Parameter Name="childage3" Mode="In" Type="Double" />
+      <Parameter Name="childage4" Mode="In" Type="Double" />
+      <Parameter Name="childage5" Mode="In" Type="Double" />
+      <Parameter Name="childgender1" Mode="In" Type="String" />
+      <Parameter Name="childgender2" Mode="In" Type="String" />
+      <Parameter Name="childgender3" Mode="In" Type="String" />
+      <Parameter Name="childgender4" Mode="In" Type="String" />
+      <Parameter Name="childgender5" Mode="In" Type="String" />
+      <Parameter Name="featurerank1" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank2" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank3" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank4" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank5" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_PRODUCT_POS" ReturnType="Collection(HealthInsuranceModel.HI_GET_PRODUCT_POS_Result)">
+      <Parameter Name="PRODID_Input" Mode="In" Type="Int32" />
+      <Parameter Name="self_flag" Mode="In" Type="Int32" />
+      <Parameter Name="spouse_flag" Mode="In" Type="Int32" />
+      <Parameter Name="father_flag" Mode="In" Type="Int32" />
+      <Parameter Name="mother_flag" Mode="In" Type="Int32" />
+      <Parameter Name="no_children" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="highest_age" Mode="In" Type="Double" />
+      <Parameter Name="SA_ID" Mode="In" Type="Int32" />
+      <Parameter Name="DED_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Geography" Mode="In" Type="Int32" />
+      <Parameter Name="policyterm" Mode="In" Type="Int32" />
+      <Parameter Name="selfage" Mode="In" Type="Double" />
+      <Parameter Name="spouseage" Mode="In" Type="Double" />
+      <Parameter Name="motherage" Mode="In" Type="Double" />
+      <Parameter Name="fatherage" Mode="In" Type="Double" />
+      <Parameter Name="childage1" Mode="In" Type="Double" />
+      <Parameter Name="childage2" Mode="In" Type="Double" />
+      <Parameter Name="childage3" Mode="In" Type="Double" />
+      <Parameter Name="childage4" Mode="In" Type="Double" />
+      <Parameter Name="childage5" Mode="In" Type="Double" />
+      <Parameter Name="childgender1" Mode="In" Type="String" />
+      <Parameter Name="childgender2" Mode="In" Type="String" />
+      <Parameter Name="childgender3" Mode="In" Type="String" />
+      <Parameter Name="childgender4" Mode="In" Type="String" />
+      <Parameter Name="childgender5" Mode="In" Type="String" />
+      <Parameter Name="featurerank1" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank2" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank3" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank4" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank5" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_PRODUCT_PRODPAGE" ReturnType="Collection(HealthInsuranceModel.HI_GET_PRODUCT_PRODPAGE_Result)">
+      <Parameter Name="PRODID_Input" Mode="In" Type="Int32" />
+      <Parameter Name="SA_ID" Mode="In" Type="Double" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_PRODUCTLIST" ReturnType="Collection(HealthInsuranceModel.HI_GET_PRODUCTLIST_Result)">
+      <Parameter Name="self_flag" Mode="In" Type="Int32" />
+      <Parameter Name="spouse_flag" Mode="In" Type="Int32" />
+      <Parameter Name="father_flag" Mode="In" Type="Int32" />
+      <Parameter Name="mother_flag" Mode="In" Type="Int32" />
+      <Parameter Name="no_children" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="highest_age" Mode="In" Type="Double" />
+      <Parameter Name="selfage" Mode="In" Type="Double" />
+      <Parameter Name="spouseage" Mode="In" Type="Double" />
+      <Parameter Name="motherage" Mode="In" Type="Double" />
+      <Parameter Name="fatherage" Mode="In" Type="Double" />
+      <Parameter Name="childage1" Mode="In" Type="Double" />
+      <Parameter Name="childage2" Mode="In" Type="Double" />
+      <Parameter Name="childage3" Mode="In" Type="Double" />
+      <Parameter Name="childage4" Mode="In" Type="Double" />
+      <Parameter Name="childage5" Mode="In" Type="Double" />
+      <Parameter Name="childgender1" Mode="In" Type="String" />
+      <Parameter Name="childgender2" Mode="In" Type="String" />
+      <Parameter Name="childgender3" Mode="In" Type="String" />
+      <Parameter Name="childgender4" Mode="In" Type="String" />
+      <Parameter Name="childgender5" Mode="In" Type="String" />
+      <Parameter Name="SA_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Geography" Mode="In" Type="Int32" />
+      <Parameter Name="policyterm" Mode="In" Type="Int32" />
+      <Parameter Name="DED_ID" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank1" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank2" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank3" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank4" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank5" Mode="In" Type="Int32" />
+      <Parameter Name="regid" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_PRODUCTLIST_POS" ReturnType="Collection(HealthInsuranceModel.HI_GET_PRODUCTLIST_POS_Result)">
+      <Parameter Name="self_flag" Mode="In" Type="Int32" />
+      <Parameter Name="spouse_flag" Mode="In" Type="Int32" />
+      <Parameter Name="father_flag" Mode="In" Type="Int32" />
+      <Parameter Name="mother_flag" Mode="In" Type="Int32" />
+      <Parameter Name="no_children" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="highest_age" Mode="In" Type="Double" />
+      <Parameter Name="selfage" Mode="In" Type="Double" />
+      <Parameter Name="spouseage" Mode="In" Type="Double" />
+      <Parameter Name="motherage" Mode="In" Type="Double" />
+      <Parameter Name="fatherage" Mode="In" Type="Double" />
+      <Parameter Name="childage1" Mode="In" Type="Double" />
+      <Parameter Name="childage2" Mode="In" Type="Double" />
+      <Parameter Name="childage3" Mode="In" Type="Double" />
+      <Parameter Name="childage4" Mode="In" Type="Double" />
+      <Parameter Name="childage5" Mode="In" Type="Double" />
+      <Parameter Name="childgender1" Mode="In" Type="String" />
+      <Parameter Name="childgender2" Mode="In" Type="String" />
+      <Parameter Name="childgender3" Mode="In" Type="String" />
+      <Parameter Name="childgender4" Mode="In" Type="String" />
+      <Parameter Name="childgender5" Mode="In" Type="String" />
+      <Parameter Name="SA_ID" Mode="In" Type="Int32" />
+      <Parameter Name="Geography" Mode="In" Type="Int32" />
+      <Parameter Name="policyterm" Mode="In" Type="Int32" />
+      <Parameter Name="DED_ID" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank1" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank2" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank3" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank4" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank5" Mode="In" Type="Int32" />
+      <Parameter Name="regid" Mode="In" Type="Int32" />
+      <Parameter Name="inputProdId" Mode="In" Type="String" />
+      <Parameter Name="categoryID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_SA_Graph" ReturnType="Collection(HealthInsuranceModel.HI_GET_SA_Graph_Result)">
+      <Parameter Name="PRODID" Mode="In" Type="Int32" />
+      <Parameter Name="SA" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="HI_GET_Score" ReturnType="Collection(HealthInsuranceModel.HI_GET_Score_Result)">
+      <Parameter Name="PRODID" Mode="In" Type="Int32" />
+      <Parameter Name="SA" Mode="In" Type="Double" />
+      <Parameter Name="Age" Mode="In" Type="Double" />
+      <Parameter Name="featurerank1" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank2" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank3" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank4" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank5" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_TESTPRODUCT" ReturnType="Collection(HealthInsuranceModel.HI_TESTPRODUCT_Result)">
+      <Parameter Name="PRODID_Input" Mode="In" Type="Int32" />
+      <Parameter Name="SA_ID" Mode="In" Type="Double" />
+      <Parameter Name="Highest_age" Mode="In" Type="Double" />
+      <Parameter Name="familyid" Mode="In" Type="Int32" />
+      <Parameter Name="gender" Mode="In" Type="String" />
+      <Parameter Name="geography" Mode="In" Type="Int32" />
+      <Parameter Name="policyterm" Mode="In" Type="Int32" />
+      <Parameter Name="DED_ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="HI_TESTScore" ReturnType="Collection(HealthInsuranceModel.HI_TESTScore_Result)">
+      <Parameter Name="PRODID" Mode="In" Type="Int32" />
+      <Parameter Name="SA" Mode="In" Type="Double" />
+      <Parameter Name="Age" Mode="In" Type="Double" />
+      <Parameter Name="featurerank1" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank2" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank3" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank4" Mode="In" Type="Int32" />
+      <Parameter Name="featurerank5" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="ReplaceFormulas">
+      <Parameter Name="ProdId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="GetHI_FAMILY_COMBO_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="Self" Nullable="false" />
+    <Property Type="Int32" Name="Spouse" Nullable="false" />
+    <Property Type="Int32" Name="Father" Nullable="false" />
+    <Property Type="Int32" Name="Mother" Nullable="false" />
+    <Property Type="Int32" Name="Children" Nullable="false" />
+    <Property Type="Int32" Name="Family_ID" Nullable="false" />
+    <Property Type="String" Name="Members_Cat" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="No_Adults" Nullable="true" />
+    <Property Type="Int32" Name="No_Members" Nullable="false" />
+    <Property Type="String" Name="Family_Detail" Nullable="false" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="GetHI_MODAL_POINTS_Result">
+    <Property Type="Int32" Name="Modal_ID" Nullable="false" />
+    <Property Type="Int32" Name="PROD_ID" Nullable="true" />
+    <Property Type="Int32" Name="Family_ID" Nullable="true" />
+    <Property Type="String" Name="SelfGender" Nullable="true" MaxLength="10" />
+    <Property Type="Decimal" Name="SelfAge" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="SpouseAge" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="FatherAge" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="MotherAge" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="ChildAge1" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="ChildAge2" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="ChildAge3" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="ChildAge4" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="Decimal" Name="ChildAge5" Nullable="true" Precision="9" Scale="2" />
+    <Property Type="String" Name="ChildGender1" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ChildGender2" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ChildGender3" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ChildGender4" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="ChildGender5" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="SA_ID" Nullable="true" />
+    <Property Type="Int32" Name="DED_ID" Nullable="true" />
+    <Property Type="String" Name="Geography" Nullable="true" MaxLength="255" />
+  </ComplexType>
+  <ComplexType Name="GetMasters_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="Int32" Name="OPTIONS_ID" Nullable="false" />
+    <Property Type="Int32" Name="Member_ID" Nullable="false" />
+    <Property Type="Decimal" Name="MIN_ENTRY_AGE" Nullable="false" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="MAX_ENTRY_AGE" Nullable="false" Precision="18" Scale="2" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_COMPARABLE_PRODUCT_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="String" Name="PROD_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="false" MaxLength="2000" />
+    <Property Type="Double" Name="SA" Nullable="false" />
+    <Property Type="Double" Name="Deductible" Nullable="false" />
+    <Property Type="Double" Name="premium" Nullable="false" />
+    <Property Type="Double" Name="ScoreFinal" Nullable="false" />
+    <Property Type="Int32" Name="FeaturesId" Nullable="false" />
+    <Property Type="String" Name="FeaturesName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="Int32" Name="SubFeatureID" Nullable="false" />
+    <Property Type="String" Name="SubFeatureName" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="ProductSummary_Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Feature_Present" Nullable="false" />
+    <Property Type="Double" Name="NumInfo" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Optional" Nullable="false" />
+    <Property Type="String" Name="ShortDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="LongDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="Int32" Name="ProductSummary_Class" Nullable="false" />
+    <Property Type="Int32" Name="ProductSummary_Order" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon_Order" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Class" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Order" Nullable="false" />
+    <Property Type="Int32" Name="DisplayPage_Filter" Nullable="false" />
+    <Property Type="Decimal" Name="Settlement_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Double" Name="Column1" Nullable="false" />
+    <Property Type="Decimal" Name="Settl_1_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_1_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_abv_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Int32" Name="ROOM_CATEGORY" Nullable="false" />
+    <Property Type="String" Name="Comparability_Filter" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="compare_score" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_FILE_NAME_PATH_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PROD_ID" Nullable="true" />
+    <Property Type="String" Name="FILE_DISPLAY_NAME" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="FILE_LOCATION" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="FILE_NAME_WO_EXT" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="FILE_EXT" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FILE_TYPE" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ADDED_DT" Nullable="true" />
+    <Property Type="String" Name="FILE_STATUS" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="UIN" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_MASTERS_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="false" MaxLength="2000" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_PROD_MASTERS_Result">
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="true" MaxLength="2000" />
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="String" Name="PROD_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="UIN" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="Descr" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_PROD_NETWORKHOSP_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="Int32" Name="PROD_ID" Nullable="true" />
+    <Property Type="String" Name="HospName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="HospAddress" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LatLong" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_PRODUCT_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="String" Name="PROD_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="false" MaxLength="2000" />
+    <Property Type="Double" Name="SA" Nullable="false" />
+    <Property Type="Double" Name="Deductible" Nullable="false" />
+    <Property Type="Double" Name="premium" Nullable="false" />
+    <Property Type="Double" Name="ScoreFinal" Nullable="false" />
+    <Property Type="Int32" Name="FeaturesId" Nullable="false" />
+    <Property Type="String" Name="FeaturesName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="Int32" Name="SubFeatureID" Nullable="false" />
+    <Property Type="String" Name="SubFeatureName" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="ProductSummary_Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Feature_Present" Nullable="false" />
+    <Property Type="Double" Name="NumInfo" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Optional" Nullable="false" />
+    <Property Type="String" Name="ShortDesc" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="LongDesc" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="ProductSummary_Class" Nullable="false" />
+    <Property Type="Int32" Name="ProductSummary_Order" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon_Order" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Class" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Order" Nullable="false" />
+    <Property Type="Int32" Name="DisplayPage_Filter" Nullable="false" />
+    <Property Type="Decimal" Name="Settlement_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Double" Name="Industry_Claim_Settlement" Nullable="false" />
+    <Property Type="Decimal" Name="Settl_1_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_1_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_abv_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Int32" Name="ROOM_CATEGORY" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_PRODUCT_POS_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="String" Name="PROD_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="false" MaxLength="2000" />
+    <Property Type="Double" Name="SA" Nullable="false" />
+    <Property Type="Double" Name="Deductible" Nullable="false" />
+    <Property Type="Double" Name="premium" Nullable="false" />
+    <Property Type="Double" Name="ScoreFinal" Nullable="false" />
+    <Property Type="Int32" Name="FeaturesId" Nullable="false" />
+    <Property Type="String" Name="FeaturesName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="Int32" Name="SubFeatureID" Nullable="false" />
+    <Property Type="String" Name="SubFeatureName" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="ProductSummary_Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Feature_Present" Nullable="false" />
+    <Property Type="Double" Name="NumInfo" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Optional" Nullable="false" />
+    <Property Type="String" Name="ShortDesc" Nullable="true" MaxLength="4000" />
+    <Property Type="String" Name="LongDesc" Nullable="true" MaxLength="4000" />
+    <Property Type="Int32" Name="ProductSummary_Class" Nullable="false" />
+    <Property Type="Int32" Name="ProductSummary_Order" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon_Order" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Class" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Order" Nullable="false" />
+    <Property Type="Int32" Name="DisplayPage_Filter" Nullable="false" />
+    <Property Type="Decimal" Name="Settlement_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Double" Name="Industry_Claim_Settlement" Nullable="false" />
+    <Property Type="Decimal" Name="Settl_1_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_1_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_abv_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Int32" Name="ROOM_CATEGORY" Nullable="false" />
+    <Property Type="String" Name="ProdDescription1" Nullable="true" />
+    <Property Type="String" Name="ProdDescription2" Nullable="true" />
+    <Property Type="Int32" Name="FinancialYear" Nullable="true" />
+    <Property Type="Int32" Name="AddonID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_PRODUCT_PRODPAGE_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="String" Name="PROD_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="false" MaxLength="2000" />
+    <Property Type="Double" Name="SA" Nullable="false" />
+    <Property Type="Double" Name="Deductible" Nullable="false" />
+    <Property Type="Double" Name="premium" Nullable="false" />
+    <Property Type="Double" Name="ScoreFinal" Nullable="false" />
+    <Property Type="Int32" Name="FeaturesId" Nullable="false" />
+    <Property Type="String" Name="FeaturesName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="Int32" Name="SubFeatureID" Nullable="false" />
+    <Property Type="String" Name="SubFeatureName" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="ProductSummary_Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Feature_Present" Nullable="false" />
+    <Property Type="Double" Name="NumInfo" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Optional" Nullable="false" />
+    <Property Type="String" Name="ShortDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="LongDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="Int32" Name="ProductSummary_Class" Nullable="false" />
+    <Property Type="Int32" Name="ProductSummary_Order" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon_Order" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Class" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Order" Nullable="false" />
+    <Property Type="Int32" Name="DisplayPage_Filter" Nullable="false" />
+    <Property Type="Decimal" Name="Settlement_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Double" Name="Industry_Claim_Settlement" Nullable="false" />
+    <Property Type="Decimal" Name="Settl_1_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_1_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_abv_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Int32" Name="ROOM_CATEGORY" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_PRODUCTLIST_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="String" Name="PROD_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="false" MaxLength="2000" />
+    <Property Type="Double" Name="SA" Nullable="false" />
+    <Property Type="Double" Name="Deductible" Nullable="false" />
+    <Property Type="Double" Name="premium" Nullable="false" />
+    <Property Type="Double" Name="ScoreFinal" Nullable="false" />
+    <Property Type="Int32" Name="FeaturesId" Nullable="false" />
+    <Property Type="String" Name="FeaturesName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="Int32" Name="SubFeatureID" Nullable="false" />
+    <Property Type="String" Name="SubFeatureName" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="ProductSummary_Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Feature_Present" Nullable="false" />
+    <Property Type="Double" Name="NumInfo" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Optional" Nullable="false" />
+    <Property Type="String" Name="ShortDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="LongDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="Int32" Name="ProductSummary_Class" Nullable="false" />
+    <Property Type="Int32" Name="ProductSummary_Order" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon_Order" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Class" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Order" Nullable="false" />
+    <Property Type="Int32" Name="DisplayPage_Filter" Nullable="false" />
+    <Property Type="Decimal" Name="Settlement_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Double" Name="Column1" Nullable="false" />
+    <Property Type="Decimal" Name="Settl_1_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_1_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_abv_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Int32" Name="ROOM_CATEGORY" Nullable="false" />
+    <Property Type="String" Name="Comparability_Filter" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="compare_score" Nullable="false" />
+    <Property Type="Double" Name="Industry_Claim_Settlement" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_PRODUCTLIST_POS_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="String" Name="PROD_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="false" MaxLength="2000" />
+    <Property Type="Double" Name="SA" Nullable="false" />
+    <Property Type="Double" Name="Deductible" Nullable="false" />
+    <Property Type="Double" Name="premium" Nullable="false" />
+    <Property Type="Int32" Name="ScoreFinal" Nullable="false" />
+    <Property Type="Int32" Name="FeaturesId" Nullable="false" />
+    <Property Type="String" Name="FeaturesName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="Int32" Name="SubFeatureID" Nullable="false" />
+    <Property Type="String" Name="SubFeatureName" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="ProductSummary_Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Feature_Present" Nullable="false" />
+    <Property Type="Double" Name="NumInfo" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Optional" Nullable="false" />
+    <Property Type="String" Name="ShortDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="LongDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="Int32" Name="ProductSummary_Class" Nullable="false" />
+    <Property Type="Int32" Name="ProductSummary_Order" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon_Order" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Class" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Order" Nullable="false" />
+    <Property Type="Int32" Name="DisplayPage_Filter" Nullable="false" />
+    <Property Type="Decimal" Name="Settlement_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Double" Name="Column1" Nullable="false" />
+    <Property Type="Decimal" Name="Settl_1_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_1_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_abv_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Int32" Name="ROOM_CATEGORY" Nullable="false" />
+    <Property Type="String" Name="Comparability_Filter" Nullable="false" MaxLength="1" />
+    <Property Type="Int32" Name="compare_score" Nullable="false" />
+    <Property Type="Double" Name="Industry_Claim_Settlement" Nullable="false" />
+    <Property Type="String" Name="ProdDescription1" Nullable="true" />
+    <Property Type="String" Name="ProdDescription2" Nullable="true" />
+    <Property Type="Int32" Name="FamilyID" Nullable="true" />
+    <Property Type="Int32" Name="FinancialYear" Nullable="true" />
+    <Property Type="String" Name="FamilyDetail" Nullable="true" MaxLength="255" />
+    <Property Type="Int32" Name="AddonID" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_SA_Graph_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="true" />
+    <Property Type="Decimal" Name="SAYear1" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="Decimal" Name="SAYear2" Nullable="true" Precision="38" Scale="4" />
+    <Property Type="Decimal" Name="SAYear3" Nullable="true" Precision="38" Scale="4" />
+    <Property Type="Decimal" Name="SAYear4" Nullable="true" Precision="38" Scale="4" />
+    <Property Type="Decimal" Name="SAYear5" Nullable="true" Precision="38" Scale="4" />
+  </ComplexType>
+  <ComplexType Name="HI_GET_Score_Result">
+    <Property Type="Int32" Name="prodId" Nullable="true" />
+    <Property Type="Decimal" Name="Score_Feature" Nullable="true" Precision="38" Scale="5" />
+  </ComplexType>
+  <ComplexType Name="HI_TESTPRODUCT_Result">
+    <Property Type="Int32" Name="PROD_ID" Nullable="false" />
+    <Property Type="String" Name="PROD_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="COMP_ID" Nullable="false" />
+    <Property Type="String" Name="COMP_NAME" Nullable="false" MaxLength="2000" />
+    <Property Type="Double" Name="SA" Nullable="false" />
+    <Property Type="Double" Name="Deductible" Nullable="false" />
+    <Property Type="Double" Name="premium" Nullable="false" />
+    <Property Type="Double" Name="ScoreFinal" Nullable="false" />
+    <Property Type="Int32" Name="FeaturesId" Nullable="false" />
+    <Property Type="String" Name="FeaturesName" Nullable="false" MaxLength="255" />
+    <Property Type="String" Name="Description" Nullable="false" />
+    <Property Type="Int32" Name="SubFeatureID" Nullable="false" />
+    <Property Type="String" Name="SubFeatureName" Nullable="false" MaxLength="2000" />
+    <Property Type="String" Name="ProductSummary_Title" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Feature_Present" Nullable="false" />
+    <Property Type="Double" Name="NumInfo" Nullable="false" />
+    <Property Type="String" Name="Unit" Nullable="false" MaxLength="255" />
+    <Property Type="Int32" Name="Optional" Nullable="false" />
+    <Property Type="String" Name="ShortDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="String" Name="LongDesc" Nullable="false" MaxLength="4000" />
+    <Property Type="Int32" Name="ProductSummary_Class" Nullable="false" />
+    <Property Type="Int32" Name="ProductSummary_Order" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon" Nullable="false" />
+    <Property Type="Int32" Name="ProdSummIcon_Order" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Class" Nullable="false" />
+    <Property Type="Int32" Name="DetailPage_Order" Nullable="false" />
+    <Property Type="Int32" Name="DisplayPage_Filter" Nullable="false" />
+    <Property Type="Decimal" Name="Settlement_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Double" Name="Column1" Nullable="false" />
+    <Property Type="Decimal" Name="Settl_1_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_1_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Decimal" Name="Settl_abv_3_month_Percent" Nullable="false" Precision="8" Scale="4" />
+    <Property Type="Int32" Name="ROOM_CATEGORY" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="HI_TESTScore_Result">
+    <Property Type="Int32" Name="prodId" Nullable="true" />
+    <Property Type="Decimal" Name="Score_Feature" Nullable="true" Precision="38" Scale="5" />
+  </ComplexType>
+</Schema>

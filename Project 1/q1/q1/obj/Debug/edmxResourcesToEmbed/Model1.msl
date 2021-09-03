@@ -1,0 +1,1063 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HealthInsuranceModelStoreContainer" CdmEntityContainer="HealthInsuranceEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_ADDON">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_ADDON">
+        <MappingFragment StoreEntitySet="TBL_HI_ADDON">
+          <ScalarProperty Name="ADDON_ID" ColumnName="ADDON_ID" />
+          <ScalarProperty Name="AddonName" ColumnName="AddonName" />
+          <ScalarProperty Name="OutputKeyword" ColumnName="OutputKeyword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_ADDON_PROD_MAP">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_ADDON_PROD_MAP">
+        <MappingFragment StoreEntitySet="TBL_HI_ADDON_PROD_MAP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ADDON_ID" ColumnName="ADDON_ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_CAT_MST">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_CAT_MST">
+        <MappingFragment StoreEntitySet="TBL_HI_CAT_MST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
+          <ScalarProperty Name="Cat_TYPE_ID" ColumnName="Cat_TYPE_ID" />
+          <ScalarProperty Name="CAT_TYPE_NAME" ColumnName="CAT_TYPE_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_CLAIM_SETTLEMENT">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_CLAIM_SETTLEMENT">
+        <MappingFragment StoreEntitySet="TBL_HI_CLAIM_SETTLEMENT">
+          <ScalarProperty Name="CLAIM_ID" ColumnName="CLAIM_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="Period_Name" ColumnName="Period_Name" />
+          <ScalarProperty Name="Start_Date" ColumnName="Start_Date" />
+          <ScalarProperty Name="End_Date" ColumnName="End_Date" />
+          <ScalarProperty Name="Ind_Group" ColumnName="Ind_Group" />
+          <ScalarProperty Name="Opening_Claims" ColumnName="Opening_Claims" />
+          <ScalarProperty Name="New_Added" ColumnName="New_Added" />
+          <ScalarProperty Name="Claims_Settled" ColumnName="Claims_Settled" />
+          <ScalarProperty Name="Claims_Repudiated" ColumnName="Claims_Repudiated" />
+          <ScalarProperty Name="Claims_Closed" ColumnName="Claims_Closed" />
+          <ScalarProperty Name="Closing_Claims" ColumnName="Closing_Claims" />
+          <ScalarProperty Name="Setl_1_mon" ColumnName="Setl_1_mon" />
+          <ScalarProperty Name="Setl_1_3_mon" ColumnName="Setl_1_3_mon" />
+          <ScalarProperty Name="Setl_3_6_mon" ColumnName="Setl_3_6_mon" />
+          <ScalarProperty Name="Setl_6_12_mon" ColumnName="Setl_6_12_mon" />
+          <ScalarProperty Name="Setl_Over_1_Yr" ColumnName="Setl_Over_1_Yr" />
+          <ScalarProperty Name="Settlement_Percent" ColumnName="Settlement_Percent" />
+          <ScalarProperty Name="Repudiation_Percent" ColumnName="Repudiation_Percent" />
+          <ScalarProperty Name="Settl_1_month_Percent" ColumnName="Settl_1_month_Percent" />
+          <ScalarProperty Name="Settl_1_3_month_Percent" ColumnName="Settl_1_3_month_Percent" />
+          <ScalarProperty Name="Settl_abv_3_month_Percent" ColumnName="Settl_abv_3_month_Percent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_COMP_FILE_PATH_MST">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_COMP_FILE_PATH_MST">
+        <MappingFragment StoreEntitySet="TBL_HI_COMP_FILE_PATH_MST">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="FILE_DISPLAY_NAME" ColumnName="FILE_DISPLAY_NAME" />
+          <ScalarProperty Name="FILE_LOCATION" ColumnName="FILE_LOCATION" />
+          <ScalarProperty Name="FILE_NAME_WO_EXT" ColumnName="FILE_NAME_WO_EXT" />
+          <ScalarProperty Name="FILE_EXT" ColumnName="FILE_EXT" />
+          <ScalarProperty Name="FILE_TYPE" ColumnName="FILE_TYPE" />
+          <ScalarProperty Name="ADDED_DT" ColumnName="ADDED_DT" />
+          <ScalarProperty Name="FILE_STATUS" ColumnName="FILE_STATUS" />
+          <ScalarProperty Name="UIN" ColumnName="UIN" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_COMPANY">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_COMPANY">
+        <MappingFragment StoreEntitySet="TBL_HI_COMPANY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_DEDUCTIBLE">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_DEDUCTIBLE">
+        <MappingFragment StoreEntitySet="TBL_HI_DEDUCTIBLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DED_ID" ColumnName="DED_ID" />
+          <ScalarProperty Name="MIN_DED" ColumnName="MIN_DED" />
+          <ScalarProperty Name="MAX_DED" ColumnName="MAX_DED" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_EMAIL">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_EMAIL">
+        <MappingFragment StoreEntitySet="TBL_HI_EMAIL">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="EmailKey" ColumnName="EmailKey" />
+          <ScalarProperty Name="ReferencePage" ColumnName="ReferencePage" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_FEATURES">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_FEATURES">
+        <MappingFragment StoreEntitySet="TBL_HI_FEATURES">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="BenID" ColumnName="BenID" />
+          <ScalarProperty Name="FeaturesName" ColumnName="FeaturesName" />
+          <ScalarProperty Name="ComparisonFlag" ColumnName="ComparisonFlag" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Icon_Path" ColumnName="Icon_Path" />
+          <ScalarProperty Name="PersonalizePage_Class" ColumnName="PersonalizePage_Class" />
+          <ScalarProperty Name="PersonalizePage_Order" ColumnName="PersonalizePage_Order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_MEMBERS">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_MEMBERS">
+        <MappingFragment StoreEntitySet="TBL_HI_MEMBERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="Member_Description" ColumnName="Member_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_MODAL_POINTS">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_MODAL_POINTS">
+        <MappingFragment StoreEntitySet="TBL_HI_MODAL_POINTS">
+          <ScalarProperty Name="Modal_ID" ColumnName="Modal_ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="Family_ID" ColumnName="Family_ID" />
+          <ScalarProperty Name="SelfGender" ColumnName="SelfGender" />
+          <ScalarProperty Name="SelfAge" ColumnName="SelfAge" />
+          <ScalarProperty Name="SpouseAge" ColumnName="SpouseAge" />
+          <ScalarProperty Name="FatherAge" ColumnName="FatherAge" />
+          <ScalarProperty Name="MotherAge" ColumnName="MotherAge" />
+          <ScalarProperty Name="ChildAge1" ColumnName="ChildAge1" />
+          <ScalarProperty Name="ChildAge2" ColumnName="ChildAge2" />
+          <ScalarProperty Name="ChildAge3" ColumnName="ChildAge3" />
+          <ScalarProperty Name="ChildAge4" ColumnName="ChildAge4" />
+          <ScalarProperty Name="ChildAge5" ColumnName="ChildAge5" />
+          <ScalarProperty Name="ChildGender1" ColumnName="ChildGender1" />
+          <ScalarProperty Name="ChildGender2" ColumnName="ChildGender2" />
+          <ScalarProperty Name="ChildGender3" ColumnName="ChildGender3" />
+          <ScalarProperty Name="ChildGender4" ColumnName="ChildGender4" />
+          <ScalarProperty Name="ChildGender5" ColumnName="ChildGender5" />
+          <ScalarProperty Name="SA_ID" ColumnName="SA_ID" />
+          <ScalarProperty Name="DED_ID" ColumnName="DED_ID" />
+          <ScalarProperty Name="Geography" ColumnName="Geography" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_NETWORKHOSP">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_NETWORKHOSP">
+        <MappingFragment StoreEntitySet="TBL_HI_NETWORKHOSP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="HospName" ColumnName="HospName" />
+          <ScalarProperty Name="HospAddress" ColumnName="HospAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="LatLong" ColumnName="LatLong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PINCODE">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PINCODE">
+        <MappingFragment StoreEntitySet="TBL_HI_PINCODE">
+          <ScalarProperty Name="PinCodeId" ColumnName="PinCodeId" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PinCodeArea" ColumnName="PinCodeArea" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PROD_DEDUCTIBLE">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PROD_DEDUCTIBLE">
+        <MappingFragment StoreEntitySet="TBL_HI_PROD_DEDUCTIBLE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="FROM_AGE" ColumnName="FROM_AGE" />
+          <ScalarProperty Name="To_AGE" ColumnName="To_AGE" />
+          <ScalarProperty Name="FROM_SA" ColumnName="FROM_SA" />
+          <ScalarProperty Name="TO_SA" ColumnName="TO_SA" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PROD_DESC">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PROD_DESC">
+        <MappingFragment StoreEntitySet="TBL_HI_PROD_DESC">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="ProdDescription1" ColumnName="ProdDescription1" />
+          <ScalarProperty Name="ProdDescription2" ColumnName="ProdDescription2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PRODUCT_CI">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PRODUCT_CI">
+        <MappingFragment StoreEntitySet="TBL_HI_PRODUCT_CI">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="CIName" ColumnName="CIName" />
+          <ScalarProperty Name="CIDescription" ColumnName="CIDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_REGISTRATION_COMPANY">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_REGISTRATION_COMPANY">
+        <MappingFragment StoreEntitySet="TBL_HI_REGISTRATION_COMPANY">
+          <ScalarProperty Name="RegId" ColumnName="RegId" />
+          <ScalarProperty Name="Comp_Id" ColumnName="Comp_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_ROOM_CATEGORY">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_ROOM_CATEGORY">
+        <MappingFragment StoreEntitySet="TBL_HI_ROOM_CATEGORY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+          <ScalarProperty Name="ROOM_CAT_NAME" ColumnName="ROOM_CAT_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_STATE_CITY">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_STATE_CITY">
+        <MappingFragment StoreEntitySet="TBL_HI_STATE_CITY">
+          <ScalarProperty Name="StateCityID" ColumnName="StateCityID" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Order_Display" ColumnName="Order_Display" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_USAGE">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_USAGE">
+        <MappingFragment StoreEntitySet="TBL_HI_USAGE">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UseDate" ColumnName="UseDate" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FromPage" ColumnName="FromPage" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="FamilyCombo" ColumnName="FamilyCombo" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_ADDON_PREM_RATES">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_ADDON_PREM_RATES">
+        <MappingFragment StoreEntitySet="TBL_HI_ADDON_PREM_RATES">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="ADDON_ID" ColumnName="ADDON_ID" />
+          <ScalarProperty Name="AGE_LOWER_LIMIT" ColumnName="AGE_LOWER_LIMIT" />
+          <ScalarProperty Name="AGE_UPPER_LIMIT" ColumnName="AGE_UPPER_LIMIT" />
+          <ScalarProperty Name="Geography" ColumnName="Geography" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="FAMILY_ID" ColumnName="FAMILY_ID" />
+          <ScalarProperty Name="Members_Cat" ColumnName="Members_Cat" />
+          <ScalarProperty Name="PT" ColumnName="PT" />
+          <ScalarProperty Name="SA_LOWER_LIMIT" ColumnName="SA_LOWER_LIMIT" />
+          <ScalarProperty Name="SA_UPPER_LIMIT" ColumnName="SA_UPPER_LIMIT" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="RATE" ColumnName="RATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_ADDON_PRODUCT_FORMULA">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_ADDON_PRODUCT_FORMULA">
+        <MappingFragment StoreEntitySet="TBL_HI_ADDON_PRODUCT_FORMULA">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="ADDON_ID" ColumnName="ADDON_ID" />
+          <ScalarProperty Name="FORMULA_NAME" ColumnName="FORMULA_NAME" />
+          <ScalarProperty Name="FORMULA" ColumnName="FORMULA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_AGE_MST">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_AGE_MST">
+        <MappingFragment StoreEntitySet="TBL_HI_AGE_MST">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="MIN_ENTRY_AGE" ColumnName="MIN_ENTRY_AGE" />
+          <ScalarProperty Name="MAX_ENTRY_AGE" ColumnName="MAX_ENTRY_AGE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_BENTYPE">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_BENTYPE">
+        <MappingFragment StoreEntitySet="TBL_HI_BENTYPE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="BenID" ColumnName="BenID" />
+          <ScalarProperty Name="BenTitle" ColumnName="BenTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_COPAY">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_COPAY">
+        <MappingFragment StoreEntitySet="TBL_HI_COPAY">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="SA_LOWER_IMIT" ColumnName="SA_LOWER_IMIT" />
+          <ScalarProperty Name="SA_UPPER_LIMIT" ColumnName="SA_UPPER_LIMIT" />
+          <ScalarProperty Name="AGE_LOWER" ColumnName="AGE_LOWER" />
+          <ScalarProperty Name="AGE_UPPER" ColumnName="AGE_UPPER" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+          <ScalarProperty Name="COPAY" ColumnName="COPAY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_FAMILY">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_FAMILY">
+        <MappingFragment StoreEntitySet="TBL_HI_FAMILY">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Family_ID" ColumnName="Family_ID" />
+          <ScalarProperty Name="Members_Cat" ColumnName="Members_Cat" />
+          <ScalarProperty Name="No_Members" ColumnName="No_Members" />
+          <ScalarProperty Name="Family_Detail" ColumnName="Family_Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_FAMILY_BKP">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_FAMILY_BKP">
+        <MappingFragment StoreEntitySet="TBL_HI_FAMILY_BKP">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Family_ID" ColumnName="Family_ID" />
+          <ScalarProperty Name="Members_Cat" ColumnName="Members_Cat" />
+          <ScalarProperty Name="No_Members" ColumnName="No_Members" />
+          <ScalarProperty Name="Family_Detail" ColumnName="Family_Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_FAMILY_COMBO">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_FAMILY_COMBO">
+        <MappingFragment StoreEntitySet="TBL_HI_FAMILY_COMBO">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Self" ColumnName="Self" />
+          <ScalarProperty Name="Spouse" ColumnName="Spouse" />
+          <ScalarProperty Name="Father" ColumnName="Father" />
+          <ScalarProperty Name="Mother" ColumnName="Mother" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Family_ID" ColumnName="Family_ID" />
+          <ScalarProperty Name="Members_Cat" ColumnName="Members_Cat" />
+          <ScalarProperty Name="No_Adults" ColumnName="No_Adults" />
+          <ScalarProperty Name="No_Members" ColumnName="No_Members" />
+          <ScalarProperty Name="Family_Detail" ColumnName="Family_Detail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_MEMBER_DISC">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_MEMBER_DISC">
+        <MappingFragment StoreEntitySet="TBL_HI_MEMBER_DISC">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PT" ColumnName="PT" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="MIN_MEMBERS" ColumnName="MIN_MEMBERS" />
+          <ScalarProperty Name="MAX_MEMBERS" ColumnName="MAX_MEMBERS" />
+          <ScalarProperty Name="SA_LOWER_LIMIT" ColumnName="SA_LOWER_LIMIT" />
+          <ScalarProperty Name="SA_UPPER_LIMIT" ColumnName="SA_UPPER_LIMIT" />
+          <ScalarProperty Name="DISC_RATE" ColumnName="DISC_RATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_MIN_SA">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_MIN_SA">
+        <MappingFragment StoreEntitySet="TBL_HI_MIN_SA">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="FROM_AGE" ColumnName="FROM_AGE" />
+          <ScalarProperty Name="TO_AGE" ColumnName="TO_AGE" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="MAX_SA" ColumnName="MAX_SA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_NCB">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_NCB">
+        <MappingFragment StoreEntitySet="TBL_HI_NCB">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="BONUS_RATE" ColumnName="BONUS_RATE" />
+          <ScalarProperty Name="MAX_CUM_BONUS" ColumnName="MAX_CUM_BONUS" />
+          <ScalarProperty Name="No_Years" ColumnName="No_Years" />
+          <ScalarProperty Name="RENEWAL_DISCOUNT" ColumnName="RENEWAL_DISCOUNT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PREM_RATES">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PREM_RATES">
+        <MappingFragment StoreEntitySet="TBL_HI_PREM_RATES">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="AGE_LOWER_LIMIT" ColumnName="AGE_LOWER_LIMIT" />
+          <ScalarProperty Name="AGE_UPPER_LIMIT" ColumnName="AGE_UPPER_LIMIT" />
+          <ScalarProperty Name="Geography" ColumnName="Geography" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="FAMILY_ID" ColumnName="FAMILY_ID" />
+          <ScalarProperty Name="Members_Cat" ColumnName="Members_Cat" />
+          <ScalarProperty Name="PT" ColumnName="PT" />
+          <ScalarProperty Name="SA_LOWER_LIMIT" ColumnName="SA_LOWER_LIMIT" />
+          <ScalarProperty Name="SA_UPPER_LIMIT" ColumnName="SA_UPPER_LIMIT" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="RATE" ColumnName="RATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PROD_CAT">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PROD_CAT">
+        <MappingFragment StoreEntitySet="TBL_HI_PROD_CAT">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="CAT_TYPE_ID" ColumnName="CAT_TYPE_ID" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PROD_FAMILY">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PROD_FAMILY">
+        <MappingFragment StoreEntitySet="TBL_HI_PROD_FAMILY">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="FAMILY_ID" ColumnName="FAMILY_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PROD_MEMBERS">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PROD_MEMBERS">
+        <MappingFragment StoreEntitySet="TBL_HI_PROD_MEMBERS">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="MIN_MEMBERS" ColumnName="MIN_MEMBERS" />
+          <ScalarProperty Name="MAX_MEMBERS" ColumnName="MAX_MEMBERS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PROD_OPTION">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PROD_OPTION">
+        <MappingFragment StoreEntitySet="TBL_HI_PROD_OPTION">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="OPTIONS_NAME" ColumnName="OPTIONS_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PRODUCT">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PRODUCT">
+        <MappingFragment StoreEntitySet="TBL_HI_PRODUCT">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PRODUCT_FEATURES">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PRODUCT_FEATURES">
+        <MappingFragment StoreEntitySet="TBL_HI_PRODUCT_FEATURES">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="Feature_Present" ColumnName="Feature_Present" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="Min_SA" ColumnName="Min_SA" />
+          <ScalarProperty Name="Max_SA" ColumnName="Max_SA" />
+          <ScalarProperty Name="NumInfo" ColumnName="NumInfo" />
+          <ScalarProperty Name="MaxNumInfo" ColumnName="MaxNumInfo" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+          <ScalarProperty Name="SpecialFeature" ColumnName="SpecialFeature" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PRODUCT_FORMULA">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PRODUCT_FORMULA">
+        <MappingFragment StoreEntitySet="TBL_HI_PRODUCT_FORMULA">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="FORMULA_NAME" ColumnName="FORMULA_NAME" />
+          <ScalarProperty Name="FORMULA" ColumnName="FORMULA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_PT_MASTER">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_PT_MASTER">
+        <MappingFragment StoreEntitySet="TBL_HI_PT_MASTER">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PT" ColumnName="PT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_RATETABLE1">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_RATETABLE1">
+        <MappingFragment StoreEntitySet="TBL_HI_RATETABLE1">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="AGE_LOWER_LIMIT" ColumnName="AGE_LOWER_LIMIT" />
+          <ScalarProperty Name="AGE_UPPER_LIMIT" ColumnName="AGE_UPPER_LIMIT" />
+          <ScalarProperty Name="Geography" ColumnName="Geography" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="GENDER" ColumnName="GENDER" />
+          <ScalarProperty Name="FAMILY_ID" ColumnName="FAMILY_ID" />
+          <ScalarProperty Name="Members_Cat" ColumnName="Members_Cat" />
+          <ScalarProperty Name="PT" ColumnName="PT" />
+          <ScalarProperty Name="SA_LOWER_LIMIT" ColumnName="SA_LOWER_LIMIT" />
+          <ScalarProperty Name="SA_UPPER_LIMIT" ColumnName="SA_UPPER_LIMIT" />
+          <ScalarProperty Name="Field1" ColumnName="Field1" />
+          <ScalarProperty Name="RATE" ColumnName="RATE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_ROOM_RENT">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_ROOM_RENT">
+        <MappingFragment StoreEntitySet="TBL_HI_ROOM_RENT">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="SA_LOWER_LIMIT" ColumnName="SA_LOWER_LIMIT" />
+          <ScalarProperty Name="SA_UPPER_LIMIT" ColumnName="SA_UPPER_LIMIT" />
+          <ScalarProperty Name="RENT" ColumnName="RENT" />
+          <ScalarProperty Name="MAX_RENT_ABS" ColumnName="MAX_RENT_ABS" />
+          <ScalarProperty Name="RENT_SA_PERCENT" ColumnName="RENT_SA_PERCENT" />
+          <ScalarProperty Name="MAX_RENT_SA_PERCENT" ColumnName="MAX_RENT_SA_PERCENT" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_SA_RANGE">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_SA_RANGE">
+        <MappingFragment StoreEntitySet="TBL_HI_SA_RANGE">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="SA_ID" ColumnName="SA_ID" />
+          <ScalarProperty Name="MIN_SA" ColumnName="MIN_SA" />
+          <ScalarProperty Name="MAX_SA" ColumnName="MAX_SA" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_STATE">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_STATE">
+        <MappingFragment StoreEntitySet="TBL_HI_STATE">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="StateId" ColumnName="StateId" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_SUBFEATURES">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_SUBFEATURES">
+        <MappingFragment StoreEntitySet="TBL_HI_SUBFEATURES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
+          <ScalarProperty Name="ComparisonFlag" ColumnName="ComparisonFlag" />
+          <ScalarProperty Name="Scorecard" ColumnName="Scorecard" />
+          <ScalarProperty Name="Rank1" ColumnName="Rank1" />
+          <ScalarProperty Name="BaseValue" ColumnName="BaseValue" />
+          <ScalarProperty Name="ProductSummary_Title" ColumnName="ProductSummary_Title" />
+          <ScalarProperty Name="ProductSummary_Class" ColumnName="ProductSummary_Class" />
+          <ScalarProperty Name="ProductSummary_Order" ColumnName="ProductSummary_Order" />
+          <ScalarProperty Name="DetailPage_Class" ColumnName="DetailPage_Class" />
+          <ScalarProperty Name="DetailPage_Order" ColumnName="DetailPage_Order" />
+          <ScalarProperty Name="ProdSummIcon" ColumnName="ProdSummIcon" />
+          <ScalarProperty Name="ProdSummIcon_Order" ColumnName="ProdSummIcon_Order" />
+          <ScalarProperty Name="DisplayPage_Filter" ColumnName="DisplayPage_Filter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_HI_Weights">
+      <EntityTypeMapping TypeName="HealthInsuranceModel.TBL_HI_Weights">
+        <MappingFragment StoreEntitySet="TBL_HI_Weights">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Rank" ColumnName="Rank" />
+          <ScalarProperty Name="Weights" ColumnName="Weights" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="HealthInsuranceModel.Store.Split" FunctionImportName="Split">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.Split_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="items" ColumnName="items" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionName="HealthInsuranceModel.Store.SplitString" FunctionImportName="SplitString">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.SplitString_Result">
+          <ScalarProperty Name="DATA" ColumnName="DATA" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetHI_FAMILY_COMBO" FunctionName="HealthInsuranceModel.Store.GetHI_FAMILY_COMBO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.GetHI_FAMILY_COMBO_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Self" ColumnName="Self" />
+          <ScalarProperty Name="Spouse" ColumnName="Spouse" />
+          <ScalarProperty Name="Father" ColumnName="Father" />
+          <ScalarProperty Name="Mother" ColumnName="Mother" />
+          <ScalarProperty Name="Children" ColumnName="Children" />
+          <ScalarProperty Name="Family_ID" ColumnName="Family_ID" />
+          <ScalarProperty Name="Members_Cat" ColumnName="Members_Cat" />
+          <ScalarProperty Name="No_Adults" ColumnName="No_Adults" />
+          <ScalarProperty Name="No_Members" ColumnName="No_Members" />
+          <ScalarProperty Name="Family_Detail" ColumnName="Family_Detail" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetHI_MODAL_POINTS" FunctionName="HealthInsuranceModel.Store.GetHI_MODAL_POINTS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.GetHI_MODAL_POINTS_Result">
+          <ScalarProperty Name="Modal_ID" ColumnName="Modal_ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="Family_ID" ColumnName="Family_ID" />
+          <ScalarProperty Name="SelfGender" ColumnName="SelfGender" />
+          <ScalarProperty Name="SelfAge" ColumnName="SelfAge" />
+          <ScalarProperty Name="SpouseAge" ColumnName="SpouseAge" />
+          <ScalarProperty Name="FatherAge" ColumnName="FatherAge" />
+          <ScalarProperty Name="MotherAge" ColumnName="MotherAge" />
+          <ScalarProperty Name="ChildAge1" ColumnName="ChildAge1" />
+          <ScalarProperty Name="ChildAge2" ColumnName="ChildAge2" />
+          <ScalarProperty Name="ChildAge3" ColumnName="ChildAge3" />
+          <ScalarProperty Name="ChildAge4" ColumnName="ChildAge4" />
+          <ScalarProperty Name="ChildAge5" ColumnName="ChildAge5" />
+          <ScalarProperty Name="ChildGender1" ColumnName="ChildGender1" />
+          <ScalarProperty Name="ChildGender2" ColumnName="ChildGender2" />
+          <ScalarProperty Name="ChildGender3" ColumnName="ChildGender3" />
+          <ScalarProperty Name="ChildGender4" ColumnName="ChildGender4" />
+          <ScalarProperty Name="ChildGender5" ColumnName="ChildGender5" />
+          <ScalarProperty Name="SA_ID" ColumnName="SA_ID" />
+          <ScalarProperty Name="DED_ID" ColumnName="DED_ID" />
+          <ScalarProperty Name="Geography" ColumnName="Geography" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetMasters" FunctionName="HealthInsuranceModel.Store.GetMasters">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.GetMasters_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="OPTIONS_ID" ColumnName="OPTIONS_ID" />
+          <ScalarProperty Name="Member_ID" ColumnName="Member_ID" />
+          <ScalarProperty Name="MIN_ENTRY_AGE" ColumnName="MIN_ENTRY_AGE" />
+          <ScalarProperty Name="MAX_ENTRY_AGE" ColumnName="MAX_ENTRY_AGE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_CalculatePremium" FunctionName="HealthInsuranceModel.Store.HI_CalculatePremium" />
+    <FunctionImportMapping FunctionImportName="HI_CalculatePremium_POS" FunctionName="HealthInsuranceModel.Store.HI_CalculatePremium_POS" />
+    <FunctionImportMapping FunctionImportName="HI_DELETEPROD" FunctionName="HealthInsuranceModel.Store.HI_DELETEPROD" />
+    <FunctionImportMapping FunctionImportName="HI_GET_COMPANY_MASTERS" FunctionName="HealthInsuranceModel.Store.HI_GET_COMPANY_MASTERS" />
+    <FunctionImportMapping FunctionImportName="HI_GET_COMPARABLE_PRODUCT" FunctionName="HealthInsuranceModel.Store.HI_GET_COMPARABLE_PRODUCT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_COMPARABLE_PRODUCT_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="ScoreFinal" ColumnName="ScoreFinal" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="FeaturesName" ColumnName="FeaturesName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
+          <ScalarProperty Name="ProductSummary_Title" ColumnName="ProductSummary_Title" />
+          <ScalarProperty Name="Feature_Present" ColumnName="Feature_Present" />
+          <ScalarProperty Name="NumInfo" ColumnName="NumInfo" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="ProductSummary_Class" ColumnName="ProductSummary_Class" />
+          <ScalarProperty Name="ProductSummary_Order" ColumnName="ProductSummary_Order" />
+          <ScalarProperty Name="ProdSummIcon" ColumnName="ProdSummIcon" />
+          <ScalarProperty Name="ProdSummIcon_Order" ColumnName="ProdSummIcon_Order" />
+          <ScalarProperty Name="DetailPage_Class" ColumnName="DetailPage_Class" />
+          <ScalarProperty Name="DetailPage_Order" ColumnName="DetailPage_Order" />
+          <ScalarProperty Name="DisplayPage_Filter" ColumnName="DisplayPage_Filter" />
+          <ScalarProperty Name="Settlement_Percent" ColumnName="Settlement_Percent" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Settl_1_month_Percent" ColumnName="Settl_1_month_Percent" />
+          <ScalarProperty Name="Settl_1_3_month_Percent" ColumnName="Settl_1_3_month_Percent" />
+          <ScalarProperty Name="Settl_abv_3_month_Percent" ColumnName="Settl_abv_3_month_Percent" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+          <ScalarProperty Name="Comparability_Filter" ColumnName="Comparability_Filter" />
+          <ScalarProperty Name="compare_score" ColumnName="compare_score" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_FILE_NAME_PATH" FunctionName="HealthInsuranceModel.Store.HI_GET_FILE_NAME_PATH">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_FILE_NAME_PATH_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="FILE_DISPLAY_NAME" ColumnName="FILE_DISPLAY_NAME" />
+          <ScalarProperty Name="FILE_LOCATION" ColumnName="FILE_LOCATION" />
+          <ScalarProperty Name="FILE_NAME_WO_EXT" ColumnName="FILE_NAME_WO_EXT" />
+          <ScalarProperty Name="FILE_EXT" ColumnName="FILE_EXT" />
+          <ScalarProperty Name="FILE_TYPE" ColumnName="FILE_TYPE" />
+          <ScalarProperty Name="ADDED_DT" ColumnName="ADDED_DT" />
+          <ScalarProperty Name="FILE_STATUS" ColumnName="FILE_STATUS" />
+          <ScalarProperty Name="UIN" ColumnName="UIN" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_MASTERS" FunctionName="HealthInsuranceModel.Store.HI_GET_MASTERS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_MASTERS_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_PROD_MASTERS" FunctionName="HealthInsuranceModel.Store.HI_GET_PROD_MASTERS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_PROD_MASTERS_Result">
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="UIN" ColumnName="UIN" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_PROD_NETWORKHOSP" FunctionName="HealthInsuranceModel.Store.HI_GET_PROD_NETWORKHOSP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_PROD_NETWORKHOSP_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="HospName" ColumnName="HospName" />
+          <ScalarProperty Name="HospAddress" ColumnName="HospAddress" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="LatLong" ColumnName="LatLong" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_PRODUCT" FunctionName="HealthInsuranceModel.Store.HI_GET_PRODUCT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_PRODUCT_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="ScoreFinal" ColumnName="ScoreFinal" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="FeaturesName" ColumnName="FeaturesName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
+          <ScalarProperty Name="ProductSummary_Title" ColumnName="ProductSummary_Title" />
+          <ScalarProperty Name="Feature_Present" ColumnName="Feature_Present" />
+          <ScalarProperty Name="NumInfo" ColumnName="NumInfo" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="ProductSummary_Class" ColumnName="ProductSummary_Class" />
+          <ScalarProperty Name="ProductSummary_Order" ColumnName="ProductSummary_Order" />
+          <ScalarProperty Name="ProdSummIcon" ColumnName="ProdSummIcon" />
+          <ScalarProperty Name="ProdSummIcon_Order" ColumnName="ProdSummIcon_Order" />
+          <ScalarProperty Name="DetailPage_Class" ColumnName="DetailPage_Class" />
+          <ScalarProperty Name="DetailPage_Order" ColumnName="DetailPage_Order" />
+          <ScalarProperty Name="DisplayPage_Filter" ColumnName="DisplayPage_Filter" />
+          <ScalarProperty Name="Settlement_Percent" ColumnName="Settlement_Percent" />
+          <ScalarProperty Name="Industry_Claim_Settlement" ColumnName="Industry_Claim_Settlement" />
+          <ScalarProperty Name="Settl_1_month_Percent" ColumnName="Settl_1_month_Percent" />
+          <ScalarProperty Name="Settl_1_3_month_Percent" ColumnName="Settl_1_3_month_Percent" />
+          <ScalarProperty Name="Settl_abv_3_month_Percent" ColumnName="Settl_abv_3_month_Percent" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_PRODUCT_POS" FunctionName="HealthInsuranceModel.Store.HI_GET_PRODUCT_POS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_PRODUCT_POS_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="ScoreFinal" ColumnName="ScoreFinal" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="FeaturesName" ColumnName="FeaturesName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
+          <ScalarProperty Name="ProductSummary_Title" ColumnName="ProductSummary_Title" />
+          <ScalarProperty Name="Feature_Present" ColumnName="Feature_Present" />
+          <ScalarProperty Name="NumInfo" ColumnName="NumInfo" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="ProductSummary_Class" ColumnName="ProductSummary_Class" />
+          <ScalarProperty Name="ProductSummary_Order" ColumnName="ProductSummary_Order" />
+          <ScalarProperty Name="ProdSummIcon" ColumnName="ProdSummIcon" />
+          <ScalarProperty Name="ProdSummIcon_Order" ColumnName="ProdSummIcon_Order" />
+          <ScalarProperty Name="DetailPage_Class" ColumnName="DetailPage_Class" />
+          <ScalarProperty Name="DetailPage_Order" ColumnName="DetailPage_Order" />
+          <ScalarProperty Name="DisplayPage_Filter" ColumnName="DisplayPage_Filter" />
+          <ScalarProperty Name="Settlement_Percent" ColumnName="Settlement_Percent" />
+          <ScalarProperty Name="Industry_Claim_Settlement" ColumnName="Industry_Claim_Settlement" />
+          <ScalarProperty Name="Settl_1_month_Percent" ColumnName="Settl_1_month_Percent" />
+          <ScalarProperty Name="Settl_1_3_month_Percent" ColumnName="Settl_1_3_month_Percent" />
+          <ScalarProperty Name="Settl_abv_3_month_Percent" ColumnName="Settl_abv_3_month_Percent" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+          <ScalarProperty Name="ProdDescription1" ColumnName="ProdDescription1" />
+          <ScalarProperty Name="ProdDescription2" ColumnName="ProdDescription2" />
+          <ScalarProperty Name="FinancialYear" ColumnName="FinancialYear" />
+          <ScalarProperty Name="AddonID" ColumnName="AddonID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_PRODUCT_PRODPAGE" FunctionName="HealthInsuranceModel.Store.HI_GET_PRODUCT_PRODPAGE">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_PRODUCT_PRODPAGE_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="ScoreFinal" ColumnName="ScoreFinal" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="FeaturesName" ColumnName="FeaturesName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
+          <ScalarProperty Name="ProductSummary_Title" ColumnName="ProductSummary_Title" />
+          <ScalarProperty Name="Feature_Present" ColumnName="Feature_Present" />
+          <ScalarProperty Name="NumInfo" ColumnName="NumInfo" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="ProductSummary_Class" ColumnName="ProductSummary_Class" />
+          <ScalarProperty Name="ProductSummary_Order" ColumnName="ProductSummary_Order" />
+          <ScalarProperty Name="ProdSummIcon" ColumnName="ProdSummIcon" />
+          <ScalarProperty Name="ProdSummIcon_Order" ColumnName="ProdSummIcon_Order" />
+          <ScalarProperty Name="DetailPage_Class" ColumnName="DetailPage_Class" />
+          <ScalarProperty Name="DetailPage_Order" ColumnName="DetailPage_Order" />
+          <ScalarProperty Name="DisplayPage_Filter" ColumnName="DisplayPage_Filter" />
+          <ScalarProperty Name="Settlement_Percent" ColumnName="Settlement_Percent" />
+          <ScalarProperty Name="Industry_Claim_Settlement" ColumnName="Industry_Claim_Settlement" />
+          <ScalarProperty Name="Settl_1_month_Percent" ColumnName="Settl_1_month_Percent" />
+          <ScalarProperty Name="Settl_1_3_month_Percent" ColumnName="Settl_1_3_month_Percent" />
+          <ScalarProperty Name="Settl_abv_3_month_Percent" ColumnName="Settl_abv_3_month_Percent" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_PRODUCTLIST" FunctionName="HealthInsuranceModel.Store.HI_GET_PRODUCTLIST">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_PRODUCTLIST_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="ScoreFinal" ColumnName="ScoreFinal" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="FeaturesName" ColumnName="FeaturesName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
+          <ScalarProperty Name="ProductSummary_Title" ColumnName="ProductSummary_Title" />
+          <ScalarProperty Name="Feature_Present" ColumnName="Feature_Present" />
+          <ScalarProperty Name="NumInfo" ColumnName="NumInfo" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="ProductSummary_Class" ColumnName="ProductSummary_Class" />
+          <ScalarProperty Name="ProductSummary_Order" ColumnName="ProductSummary_Order" />
+          <ScalarProperty Name="ProdSummIcon" ColumnName="ProdSummIcon" />
+          <ScalarProperty Name="ProdSummIcon_Order" ColumnName="ProdSummIcon_Order" />
+          <ScalarProperty Name="DetailPage_Class" ColumnName="DetailPage_Class" />
+          <ScalarProperty Name="DetailPage_Order" ColumnName="DetailPage_Order" />
+          <ScalarProperty Name="DisplayPage_Filter" ColumnName="DisplayPage_Filter" />
+          <ScalarProperty Name="Settlement_Percent" ColumnName="Settlement_Percent" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Settl_1_month_Percent" ColumnName="Settl_1_month_Percent" />
+          <ScalarProperty Name="Settl_1_3_month_Percent" ColumnName="Settl_1_3_month_Percent" />
+          <ScalarProperty Name="Settl_abv_3_month_Percent" ColumnName="Settl_abv_3_month_Percent" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+          <ScalarProperty Name="Comparability_Filter" ColumnName="Comparability_Filter" />
+          <ScalarProperty Name="compare_score" ColumnName="compare_score" />
+          <ScalarProperty Name="Industry_Claim_Settlement" ColumnName="Industry_Claim_Settlement" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_PRODUCTLIST_POS" FunctionName="HealthInsuranceModel.Store.HI_GET_PRODUCTLIST_POS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_PRODUCTLIST_POS_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="ScoreFinal" ColumnName="ScoreFinal" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="FeaturesName" ColumnName="FeaturesName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
+          <ScalarProperty Name="ProductSummary_Title" ColumnName="ProductSummary_Title" />
+          <ScalarProperty Name="Feature_Present" ColumnName="Feature_Present" />
+          <ScalarProperty Name="NumInfo" ColumnName="NumInfo" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="ProductSummary_Class" ColumnName="ProductSummary_Class" />
+          <ScalarProperty Name="ProductSummary_Order" ColumnName="ProductSummary_Order" />
+          <ScalarProperty Name="ProdSummIcon" ColumnName="ProdSummIcon" />
+          <ScalarProperty Name="ProdSummIcon_Order" ColumnName="ProdSummIcon_Order" />
+          <ScalarProperty Name="DetailPage_Class" ColumnName="DetailPage_Class" />
+          <ScalarProperty Name="DetailPage_Order" ColumnName="DetailPage_Order" />
+          <ScalarProperty Name="DisplayPage_Filter" ColumnName="DisplayPage_Filter" />
+          <ScalarProperty Name="Settlement_Percent" ColumnName="Settlement_Percent" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Settl_1_month_Percent" ColumnName="Settl_1_month_Percent" />
+          <ScalarProperty Name="Settl_1_3_month_Percent" ColumnName="Settl_1_3_month_Percent" />
+          <ScalarProperty Name="Settl_abv_3_month_Percent" ColumnName="Settl_abv_3_month_Percent" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+          <ScalarProperty Name="Comparability_Filter" ColumnName="Comparability_Filter" />
+          <ScalarProperty Name="compare_score" ColumnName="compare_score" />
+          <ScalarProperty Name="Industry_Claim_Settlement" ColumnName="Industry_Claim_Settlement" />
+          <ScalarProperty Name="ProdDescription1" ColumnName="ProdDescription1" />
+          <ScalarProperty Name="ProdDescription2" ColumnName="ProdDescription2" />
+          <ScalarProperty Name="FamilyID" ColumnName="FamilyID" />
+          <ScalarProperty Name="FinancialYear" ColumnName="FinancialYear" />
+          <ScalarProperty Name="FamilyDetail" ColumnName="FamilyDetail" />
+          <ScalarProperty Name="AddonID" ColumnName="AddonID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_SA_Graph" FunctionName="HealthInsuranceModel.Store.HI_GET_SA_Graph">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_SA_Graph_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="SAYear1" ColumnName="SAYear1" />
+          <ScalarProperty Name="SAYear2" ColumnName="SAYear2" />
+          <ScalarProperty Name="SAYear3" ColumnName="SAYear3" />
+          <ScalarProperty Name="SAYear4" ColumnName="SAYear4" />
+          <ScalarProperty Name="SAYear5" ColumnName="SAYear5" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_GET_Score" FunctionName="HealthInsuranceModel.Store.HI_GET_Score">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_GET_Score_Result">
+          <ScalarProperty Name="prodId" ColumnName="prodId" />
+          <ScalarProperty Name="Score_Feature" ColumnName="Score_Feature" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_TESTPRODUCT" FunctionName="HealthInsuranceModel.Store.HI_TESTPRODUCT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_TESTPRODUCT_Result">
+          <ScalarProperty Name="PROD_ID" ColumnName="PROD_ID" />
+          <ScalarProperty Name="PROD_NAME" ColumnName="PROD_NAME" />
+          <ScalarProperty Name="COMP_ID" ColumnName="COMP_ID" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="SA" ColumnName="SA" />
+          <ScalarProperty Name="Deductible" ColumnName="Deductible" />
+          <ScalarProperty Name="premium" ColumnName="premium" />
+          <ScalarProperty Name="ScoreFinal" ColumnName="ScoreFinal" />
+          <ScalarProperty Name="FeaturesId" ColumnName="FeaturesId" />
+          <ScalarProperty Name="FeaturesName" ColumnName="FeaturesName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SubFeatureID" ColumnName="SubFeatureID" />
+          <ScalarProperty Name="SubFeatureName" ColumnName="SubFeatureName" />
+          <ScalarProperty Name="ProductSummary_Title" ColumnName="ProductSummary_Title" />
+          <ScalarProperty Name="Feature_Present" ColumnName="Feature_Present" />
+          <ScalarProperty Name="NumInfo" ColumnName="NumInfo" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="Optional" ColumnName="Optional" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="ProductSummary_Class" ColumnName="ProductSummary_Class" />
+          <ScalarProperty Name="ProductSummary_Order" ColumnName="ProductSummary_Order" />
+          <ScalarProperty Name="ProdSummIcon" ColumnName="ProdSummIcon" />
+          <ScalarProperty Name="ProdSummIcon_Order" ColumnName="ProdSummIcon_Order" />
+          <ScalarProperty Name="DetailPage_Class" ColumnName="DetailPage_Class" />
+          <ScalarProperty Name="DetailPage_Order" ColumnName="DetailPage_Order" />
+          <ScalarProperty Name="DisplayPage_Filter" ColumnName="DisplayPage_Filter" />
+          <ScalarProperty Name="Settlement_Percent" ColumnName="Settlement_Percent" />
+          <ScalarProperty Name="Column1" ColumnName="Column1" />
+          <ScalarProperty Name="Settl_1_month_Percent" ColumnName="Settl_1_month_Percent" />
+          <ScalarProperty Name="Settl_1_3_month_Percent" ColumnName="Settl_1_3_month_Percent" />
+          <ScalarProperty Name="Settl_abv_3_month_Percent" ColumnName="Settl_abv_3_month_Percent" />
+          <ScalarProperty Name="ROOM_CATEGORY" ColumnName="ROOM_CATEGORY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="HI_TESTScore" FunctionName="HealthInsuranceModel.Store.HI_TESTScore">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HealthInsuranceModel.HI_TESTScore_Result">
+          <ScalarProperty Name="prodId" ColumnName="prodId" />
+          <ScalarProperty Name="Score_Feature" ColumnName="Score_Feature" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="ReplaceFormulas" FunctionName="HealthInsuranceModel.Store.ReplaceFormulas" />
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="HealthInsuranceModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="HealthInsuranceModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="HealthInsuranceModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="HealthInsuranceModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="HealthInsuranceModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="HealthInsuranceModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="HealthInsuranceModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
